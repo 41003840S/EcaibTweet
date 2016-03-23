@@ -25,39 +25,50 @@
 
 <div class="container">
 
-    <div class="row">
-        <div class="col-md-3">
-            <input type="text" ng-model="usuari" class="form-control">
-            <input type="button" value="Login" ng-click="setUser()" class="btn btn-secondary">
-            <p>Name:  {{ userName.$value }}</p>
-            <p>Description:  {{ userDesc.$value }}</p>
+    <div class="row" style="background-color: #009688">
+        <div class="col-md-3" style="padding-top: 5%" >
+                <input type="text" ng-model="usuari">
+                <input type="button" value="Login" ng-click="setUser()" class="btn btn-secondary">
+                <p>Name:  {{ userName.$value }}</p>
+                <p>Description:  {{ userDesc.$value }}</p>
         </div>
+
         <div class="col-md-9" align="center">
-            <h1 align="center">ECAIBTweet</h1>
+            <div class="jumbotron" style="background-color: #009688">
+                <h1 align="center">ECAIBTweet</h1>
+            </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-3">
-        <input type="text" ng-model="usuari2Follow" class="form-control">
-        <input type="button" value="Follow" ng-click="follow()" class="btn btn-secondary">
-        <p>Following: </p>
-        <ul class="chatbox">
-            <li ng-repeat="follow in followings">{{ follow.idUser }}</li>
-        </ul>
+    <div class="row" style="padding-top: 5%">
+        <div class="col-md-3" >
+            <input type="text" ng-model="usuari2Follow">
+            <input type="button" value="Follow" ng-click="follow()" class="btn btn-secondary">
+            <p>Following: </p>
+            <ul class="chatbox">
+                 <li ng-repeat="follow in followings">{{ follow.idUser }}</li>
+            </ul>
         </div>
+
         <div class="col-md-9" align="center">
             <h2>TimeLine</h2>
             <ul class="chatbox">
                 <li ng-repeat="tweet in userTweets">{{ userId }}: {{ tweet.text }}</li>
             </ul>
+            <hr>
+            <hr>
+            <hr>
         </div>
     </div>
 
-    <footer>
-            <input type="text" ng-model="tweetTxt" class="form-control">
-            <input type="button" value="Tweet" ng-click="tweet()" class="btn btn-secondary">
-    </footer>
+    <div class="row">
+        <footer class="footer" align="center" >
+            <div class="footer navbar-fixed-bottom" >
+                <input type="text" ng-model="tweetTxt">
+                <input type="button" value="Tweet" ng-click="tweet()" class="btn btn-secondary">
+            </div>
+        </footer>
+    </div>
 
 </div>
 
